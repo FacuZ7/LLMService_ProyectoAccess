@@ -1,0 +1,1 @@
+En este repositorio nos ocupamos unicamente de la IA, va a proveer un endpoint para hacerle preguntas y nada mas!

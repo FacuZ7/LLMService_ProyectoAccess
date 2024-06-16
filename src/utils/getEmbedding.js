@@ -1,8 +1,8 @@
-import { myEmbedding } from "../configurations/embeddingsConfiguration.js";
+import { myEmbeddingTechnique } from "../configurations/embeddingsConfiguration.js";
 
 const getEmbedding = async (query) => {
     console.log(1)
-    const embedding = await myEmbedding.embedQuery(query)
+    const embedding = await myEmbeddingTechnique.embedQuery(query)
     return embedding
 
 }

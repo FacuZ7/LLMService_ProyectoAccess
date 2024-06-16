@@ -1,4 +1,5 @@
 import { index } from "../configurations/pineconeConfiguration.js";
+import getEmbedding from "./getEmbedding.js";
 
 /**
  * @param {String} query Recibe la pregunta del usuario en formato texto plano.

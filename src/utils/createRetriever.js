@@ -6,25 +6,28 @@ import getEmbedding from "./getEmbedding.js";
  * @return {import("@pinecone-database/pinecone").QueryResponse<import("@pinecone-database/pinecone").RecordMetadata>} Retorna la pregunta del usuario embebida y en forma vectorial.
  */
 const createRetriever = async (query) => {
-    console.log(0)
-    const queryVector = await getEmbedding(query)
-    console.log(2)
-    console.log(queryVector)
+    const queryVector = await getEmbedding(query);
+    
     // Define las opciones de búsqueda
     const searchOptions = {
         topK: 3,  // Número de resultados a recuperar
         includeMetadata: true,
     };
-    console.log(3)
     
-    // Realiza la búsqueda en el índice
-    const searchResults = await index.query({
-        vector: queryVector,
-        topK: searchOptions.topK,
-        includeMetadata: searchOptions.includeMetadata,
-    });
-    console.log(4)
-    return searchResults;
-}
+    // Crea el objeto retriever con un método run
+    const retriever = {
+        run: async () => {
+            // Realiza la búsqueda en el índice
+            const searchResults = await index.query({
+                vector: queryVector,
+                topK: searchOptions.topK,
+                includeMetadata: searchOptions.includeMetadata,
+            });
+            return searchResults;
+        }
+    };
+    
+    return retriever;
+};
 
 export default createRetriever;

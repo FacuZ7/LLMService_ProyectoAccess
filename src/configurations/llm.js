@@ -7,7 +7,7 @@ dotenv.config();
 // potencialmente podemos modificar este archivo solo para probar otras IA.
 const llm = new ChatOpenAI({
     modelName: "gpt-3.5-turbo",
-    temperature: 0.2, //deja volar un toque tu imaginacion
+    temperature: 0.1, //deja volar un toque tu imaginacion
 });
 
 export default llm

@@ -4,7 +4,7 @@ import createChains from './utils/createChains.js'
 const conversationChain = await createChains(vectorStore.asRetriever())
 
 let result = await conversationChain.invoke({
-    input: "¿Que me podes decir sobre argentina?",
+    input: "",
 });
 
 console.log(result)

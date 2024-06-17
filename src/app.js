@@ -1,10 +1,12 @@
-import { vectorStore } from './configurations/pineconeConfiguration.js'
-import createChains from './utils/createChains.js'
+import express from 'express'
+import dataRoutes from './routes/dataRoutes.js' 
 
-const conversationChain = await createChains(vectorStore.asRetriever())
+const PORT = 3000 //process.env.PORT
+const app = express()
 
-let result = await conversationChain.invoke({
-    input: "",
-});
+app.use(express.json())
+app.use('/api/data', dataRoutes)
 
-console.log(result)
+app.listen(PORT, () => 
+    console.log('Server express levantado')
+)

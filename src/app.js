@@ -1,12 +1,12 @@
 import express from 'express'
-import dataRoutes from './routes/dataRoutes.js' 
+import routerMaster from './routes/index.js'
 
-const PORT = 3000 //process.env.PORT
+const PORT = process.env.PORT
 const app = express()
 
 app.use(express.json())
-app.use('/api/data', dataRoutes)
+app.use(routerMaster)
 
 app.listen(PORT, () => 
-    console.log('Server express levantado')
+    console.log('Server levantado en http://localhost:3000')
 )

@@ -15,4 +15,6 @@ const vectorStore = new PineconeStore(myEmbeddingTechnique,{
     pineconeIndex
 })
 
-export { pineconeClient, pineconeIndex, vectorStore };
+const retriever = vectorStore.asRetriever();
+
+export { pineconeClient, pineconeIndex, vectorStore, retriever };

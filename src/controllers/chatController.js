@@ -6,7 +6,7 @@ export const getAnswer = async (req, res) => {
     console.log(req.body)
     try {
         const data = req.body;
-        const response = await createAnswer(data.human_message)
+        const response = await createAnswer(data.content, data.history)
         // const conversationChain = await createChains(vectorStore.asRetriever())
         // const response = await conversationChain.invoke({
         //     input: data.answer,

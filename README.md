@@ -45,6 +45,8 @@ http://localhost:3000
 
 POST http://localhost:3000/chat/
 req.body {
-  human_message: '¿Cómo configurar una almacen?'
+    "role": "human",
+    "content": "Cómo configuro un almacén?",
+    "history": []
 }
 

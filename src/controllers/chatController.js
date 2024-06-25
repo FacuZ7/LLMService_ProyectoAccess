@@ -3,17 +3,10 @@
 import createAnswer from "../services/createAnswer.js";
 
 export const getAnswer = async (req, res) => {
-    console.log(req.body)
     try {
         const data = req.body;
-        const response = await createAnswer(data.human_message)
-        // const conversationChain = await createChains(vectorStore.asRetriever())
-        // const response = await conversationChain.invoke({
-        //     input: data.answer,
-        // });
-        //res.json(response)
-        console.log(response)
-        res.status(201).send({ message: 'Data received', response });
+        const response = await createAnswer(data.content)
+        res.json(response)
     } catch (error) {
         console.log("Error!")
     }

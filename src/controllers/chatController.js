@@ -5,7 +5,7 @@ import createAnswer from "../services/createAnswer.js";
 export const getAnswer = async (req, res) => {
     try {
         const data = req.body;
-        const response = await createAnswer(data.content)
+        const response = await createAnswer(data.content, data.history)
         res.json(response)
     } catch (error) {
         console.log("Error!")

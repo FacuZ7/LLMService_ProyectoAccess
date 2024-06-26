@@ -7,13 +7,7 @@ export const getAnswer = async (req, res) => {
     try {
         const data = req.body;
         const response = await createAnswer(data.content, data.history)
-        // const conversationChain = await createChains(vectorStore.asRetriever())
-        // const response = await conversationChain.invoke({
-        //     input: data.answer,
-        // });
-        //res.json(response)
-        console.log(response)
-        res.status(201).send({ message: 'Data received', response });
+        res.json(response)
     } catch (error) {
         console.log("Error!")
     }

@@ -1,15 +1,8 @@
-## Readme para una API Node.js
+## Readme LLMService_ProyectoAccess
 
 **Descripción:**
 
-Esta API Node.js Está diseñada para ser fácil de usar y escalable, y se basa en las mejores prácticas de desarrollo de Node.js.
-
-
-**Características:**
-
-* Guarda el modelo de OpenIa
-* Consume Pinecone como fuente de conocimiento
-* Expone un endpoint para recibir preguntas
+Este repositorio se ocupa de crear y configurar el modelo (LLM) para procesar preguntas y generar respuestas. Tambien expone un endpoint por el cual recibe preguntas y envia respuestas.
 
 **Requisitos previos:**
 
@@ -18,35 +11,21 @@ Esta API Node.js Está diseñada para ser fácil de usar y escalable, y se basa 
 
 **Instalación:**
 
-1. Clonee este repositorio: `git clone https://github.com/YOUR_REPOSITORY.git`
+1. Clone este repositorio: `git clone https://github.com/FacuZ7/LLMService_ProyectoAccess.git`
 2. Instale las dependencias: `npm install` o `yarn install`
 
 **Uso:**
 
-Para iniciar la API, ejecute el siguiente comando:
+Completar las key con los datos correspondientes:
+
+. PINECONE_API_KEY = api key proporcionada una vez que se crea cuenta en pinecone.\
+. PINECONE_INDEX_NAME = este nombre es a elección. (Debe coincidir con el configurado en el [GestorVectorial](https://github.com/FacuZ7/GestorVectorial_ProyectoAccess))\
+. OPENAI_API_KEY = para esto debemos registrarnos en OPENAI y crear una api key. 
+
+ejecute el siguiente comando:
 
 ```
 npm start
 ```
 
-O, para ejecutar la API en modo desarrollo:
-
-```
-npm dev
-```
-
-La API estará disponible en la siguiente URL:
-
-```
-http://localhost:3000
-```
-
-**Documentación:**
-
-POST http://localhost:3000/chat/
-req.body {
-    "role": "human",
-    "content": "Cómo configuro un almacén?",
-    "history": []
-}
-
+El Servicio va a estar levantado y esperando peticiones en el endpoint /chat
